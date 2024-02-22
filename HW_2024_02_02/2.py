@@ -18,3 +18,7 @@ print(f"The next number after {number} is: {number + 1}\nThe previous number for
 # Enter the integer: 20
 # The next number after 20 is: 21
 # The previous number for 20 is: 19
+
+# комментарий преподавателя:
+# всё чисто, вопросов нет. =)
+# за f-строки отдельное спасибо. =)

@@ -30,3 +30,6 @@ print(f"Product of digits = {digit_product}")
 # Enter a three-digit number: 333
 # Sum of digits = 9
 # Product of digits = 27
+
+# комментарий преподавателя:
+# всё чисто, вопросов нет. =)
