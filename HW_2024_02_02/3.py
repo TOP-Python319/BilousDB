@@ -18,3 +18,6 @@ print(f"{time_in_minutes} minutes - is {hours} hours {minutes} minutes")
 # Ввод и вывод:
 # Enter time in minutes: 150
 # 150 minutes - is 2 hours 30 minutes
+
+# комментарий преподавателя:
+# всё чисто, вопросов нет. =)

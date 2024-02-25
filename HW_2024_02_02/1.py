@@ -33,4 +33,5 @@ print(name + ' ' + surname + ', ' + age)
 # Enter your year of birth: 1993
 # Diana Bilous, 31
 
-
+# комментарий преподавателя:
+# всё чисто, вопросов нет. =)
