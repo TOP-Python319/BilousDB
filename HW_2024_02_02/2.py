@@ -10,14 +10,14 @@
 #     Следующее за числом 20 число: 21
 #     Для числа 20 предыдущее число: 19
 
-number = int(input('Enter the integer: '))
+digit = int(input('Enter the integer: '))
 
-print(f"The next number after {number} is: {number + 1}\nThe previous number for {number} is: {number - 1}")
+print(f"The next digit after {digit} is: {digit + 1}\nThe previous digit for {digit} is: {digit - 1}")
 
 # Ввод и вывод:
 # Enter the integer: 20
-# The next number after 20 is: 21
-# The previous number for 20 is: 19
+# The next digit after 20 is: 21
+# The previous digit for 20 is: 19
 
 # комментарий преподавателя:
 # всё чисто, вопросов нет. =)
