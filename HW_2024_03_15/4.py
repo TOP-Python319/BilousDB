@@ -83,3 +83,7 @@ print(key)
 #     Enter a description of the error: ER_CANT_OPEN_FILE
 # Вывод 2:
 #     ! value error !
+
+
+# Комментарий преподавателя:
+# всё верно =)

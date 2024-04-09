@@ -84,3 +84,8 @@ if __name__ == "__main__":
 #     main_2.cpp
 #     src.tar.gz
 #     src_2.tar.gz
+
+
+
+# Комментарии преподавателя:
+# Использовать конструкцию if not file in counts: counts[file] = 1, т.к. это более эффективно, чем if file not in counts: counts[file] = 1
