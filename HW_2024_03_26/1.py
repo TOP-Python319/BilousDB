@@ -41,4 +41,5 @@ print(double_fact(1))
 print(double_fact(9))
 # 945
 
-    
+
+# Всё верно!
