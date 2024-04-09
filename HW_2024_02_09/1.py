@@ -34,3 +34,9 @@ print(result)
 # Вывод:
 # 5.5
 
+
+# Комментарий преподавателя:
+# можно переписать логику на более компактный вариант с использованием генератора:
+result = sum(num for num in (first_number, second_number, third_number) if num > 0)
+print(result)
+
