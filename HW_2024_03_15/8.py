@@ -48,14 +48,19 @@ def rename_duplicates(files):
             extension = parts[1] + '.' + extension     # Добавляем новую часть расширения через точку
         
         # Проверяем, сколько раз мы уже встречали это имя файла
-        if file in counts:
-            count = counts[file] + 1
-            counts[file] += 1
-        else:
-            count = 1
+        # if file in counts:
+        #     count = counts[file] + 1
+        #     counts[file] += 1
+        # else:
+        #     count = 1
+        #     counts[file] = 1
+        if not file in counts:
             counts[file] = 1
+        else:
+            counts[file] += 1
 
         # Формируем новое имя файла
+        count = counts[file]
         new_name = f"{base_name}_{count}.{extension}" if count > 1 else file
         result.append(new_name)
 
@@ -89,3 +94,5 @@ if __name__ == "__main__":
 
 # Комментарии преподавателя:
 # Использовать конструкцию if not file in counts: counts[file] = 1, т.к. это более эффективно, чем if file not in counts: counts[file] = 1
+
+# Код скорректирован в соответствии с комментариями
