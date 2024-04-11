@@ -16,27 +16,32 @@
 # Пример вывода:
 #     нет
 
-# ВАРИАНТ 1
+def is_binary_string(s: str) -> bool:
+    # Множество допустимых символов для двоичного числа
+    allowed_int = {'0', '1'}
+
+    # Проверяем, что все символы, кроме префиксов, двоичные
+    for char in s:
+        if char not in allowed_int and char not in {'b', '0', '1'}:
+            return False
+    
+    # Проверяем префиксы
+    if s.startswith('0b') or s.startswith('b'):
+        s = s[2:] if s.startswith('0b') else s[1:]  # Отбрасываем префикс
+
+    # Проверяем, что все остальные символы двоичные
+    for char in s:
+        if char not in allowed_int:
+            return False
+    
+    return True
+
+
 # Ввод пользователя
 binary_string = input('Введите двоичное число: ').strip()
 
-# Множество допустимых префиксов
-prefixes = {'', 'b', '0b'}
-# Множество допустимых символов для двоичного числа
-allowed_int = {'0', '1'}
-
-# Проверяем начинается ли строка с валидного префикса
-valid_prefix = False
-for prefix in prefixes:
-    if binary_string.startswith(prefix):
-        valid_prefix = True
-        break
-
-# Делаем проверку на содержание допустимых символов для двоичного числа
-valid_number = all(char in allowed_int for char in binary_string[len(prefix):])
-
 # Выводим результат
-if valid_prefix and valid_number:
+if is_binary_string(binary_string):
     print('Да')
 else:
     print('Нет')
@@ -49,7 +54,7 @@ else:
 # Ввод 2:
 #     Введите двоичное число: 0b11001
 # Вывод 2:
-#     Нет 
+#     Да
     
 # Ввод 3:
 #     Введите двоичное число: 0101
@@ -59,33 +64,10 @@ else:
 # Ввод 4:
 #     Введите двоичное число: b11
 # Вывод 4:
-#     Нет 
+#     Да 
 
-# PS. По данной задачке задала вопрос в телеге, пока прикрепляю два варианта решения (второй вариант ниже)
-# Обновлю код здесь, как будет понимание, какое решение верное 
+# Ввод 5:
+#     Введите двоичное число: 2b101010
+# Вывод 5:
+#     Нет
 
-
-# ВАРИАНТ 2
-# def is_binary_string(input_str):
-#     prefixes = {'', 'b', '0b'}  # множество префиксов
-#     allowed_chars = {'0', '1'}  # множество допустимых символов для двоичного числа
-
-#     # Проверяем, содержит ли строка только допустимые символы для двоичного числа
-#     if set(input_str) - allowed_chars:
-#         return False
-
-#     # Проверяем, содержит ли строка один из допустимых префиксов
-#     for prefix in prefixes:
-#         if input_str.startswith(prefix):
-#             return True
-
-#     return False
-
-# # Считываем строку из ввода
-# input_str = input().strip()
-
-# # Проверяем, представляет ли строка двоичное число, и выводим соответствующий ответ
-# if is_binary_string(input_str):
-#     print('Да')
-# else:
-#     print('Нет')
