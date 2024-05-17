@@ -1,0 +1,86 @@
+#1
+Напишите суперкласс Publisher (издательство) и два подкласса BookPublisher (книжное издательство) и NewspaperPublisher (газетное издательство).
+
+Родительский класс Publisher имеет два атрибута name и location (название, расположение) и два метода:
+	get_info(self) – предоставляет информацию о названии и расположении издательства;
+	publish(self, message) – выводит информацию об издании, которое находится в печати.
+
+Подклассы BookPublisher и NewspaperPublisher используют метод super().__init__(name, location) суперкласса для вывода информации о своих названии и расположении, и кроме того, имеют собственные атрибуты:
+	BookPublisher – num_authors (количество авторов).
+	NewspaperPublisher– num_pages (количество страниц в газете).
+
+
+Пример использования:
+publisher = Publisher("АБВГД Пресс", "Москва")
+publisher.publish("Справочник писателя")
+
+book_publisher = BookPublisher("Важные Книги", "Самара", 52)
+book_publisher.publish("Приключения Чебурашки", "В.И. Пупкин")
+
+newspaper_publisher = NewspaperPublisher("Московские вести", "Москва", 12)
+newspaper_publisher.publish("Новая версия Midjourney будет платной")
+
+Вывод:
+Готовим "Справочник писателя" к публикации в АБВГД Пресс (Москва)
+Передаем рукопись 'Приключения Чебурашки', написанную автором В.И. Пупкин в издательство Важные Книги (Самара)
+Печатаем свежий номер со статьей "Новая версия Midjourney будет платной" на главной странице в издательстве Московские вести (Москва)
+
+
+
+#2
+Разрешения в операционной системе  это права доступа, которые определяют, какие действия могут быть выполнены в рамках системы.
+Разрешения могут ограничивать использование определенного программного обеспечения, доступ к файлам и настройки системы безопасности.
+Создайте миксин, который имитирует управления правами доступами.
+
+Для этого создайте класс PermissionMixin, который будет иметь следующие методы:
+	__init__(self): метод инициализации, который создает множество permissions для хранения разрешений. В него 
+	мы будем сохранять действия, которые будут доступны пользователям, например Чтение, Запись, Выполнение и т.д.
+ 
+	grant_permission(self, permission): метод для назначения разрешения.
+	Добавляет переданное разрешение в множество permissions
+ 
+	revoke_permission(self, permission): метод для отмены разрешения.
+	Удаляет переданное разрешение из множества permissions
+ 
+	has_permission(self, permission): метод для проверки наличия разрешения.
+	Возвращает True, если переданное разрешение присутствует в множестве permissions, и False в противном случае.
+
+Создайте класс User, который будет наследоваться от PermissionMixin и иметь следующие атрибуты:
+	name: имя пользователя.
+	email: email пользователя.
+
+
+Код для проверки:
+user1 = User('Alice', 'alice@example.com')
+user2 = User('Bob', 'bob@example.com')
+
+assert user1.email == 'alice@example.com'
+assert user1.name == 'Alice'
+assert user1.permissions == set()
+
+assert user2.email == 'bob@example.com'
+assert user2.name == 'Bob'
+assert user2.permissions == set()
+
+user1.grant_permission('read')
+user1.grant_permission('write')
+user2.grant_permission('read')
+assert user1.permissions == {'read', 'write'}
+assert user2.permissions == {'read'}
+
+assert user1.has_permission('read') is True
+assert user1.has_permission('write') is True
+assert user1.has_permission('execute') is False
+
+assert user2.has_permission('read') is True
+assert user2.has_permission('write') is False
+assert user2.has_permission('execute') is False
+
+user1.revoke_permission('write')
+user1.revoke_permission('execute')
+
+assert user1.has_permission('read') is True
+assert user1.has_permission('write') is False
+assert user1.has_permission('execute') is False
+
+print('Good')
