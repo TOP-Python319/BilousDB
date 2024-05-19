@@ -51,6 +51,6 @@ with open('random.txt', 'w', encoding='utf-8') as file:
 # 726
 # 243
 
-
-
+# Комментарий преподавателя:
+# всё верно
 

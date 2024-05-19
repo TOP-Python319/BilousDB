@@ -24,5 +24,5 @@ for line in reversed(lines):  # Проходимся по строкам в об
 # Explicit is better than implicit.
 # Beautiful is better than ugly.
 
-
-
+# Комментарий преподавателя:
+# всё верно!

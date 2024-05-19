@@ -19,4 +19,5 @@ print(line[::-1])
 # .enil hcae fo rettel tsrif eht tuo tnirp dna txt.egassem_terces daeR
 
 
-
+# Комментарий преподавателя:
+# Всё верно!

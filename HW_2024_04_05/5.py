@@ -41,5 +41,6 @@ with open('output.txt', 'w', encoding='utf-8') as file_2: # Открываем �
 # 11) sdfsjkldflksdjaflkjsdflkjsdlfkjsdlfjsldfsldkfjlsdkfjls
 
 
-
+# комментарий преподавателя:
+# всё верно
 
